@@ -8,26 +8,23 @@ import { CodeBreakerService } from './../services/code-breaker.service';
 })
 export class EjercicioComponent implements OnInit {
   
-  data: any;
+  res: any;
+  secret : number;
+  guesser : number;
 
   constructor(private codeBreakerService: CodeBreakerService) { }
 
   ngOnInit() {
     
   }
-  public empezar(number: Number){
 
-    this.codeBreakerService.setNumber(number).subscribe(
-      res => this.data = res
-  );
+  empezar(){
+    this.codeBreakerService.setNumber(this.secret).subscribe();
   }
 
-  public consultar(number: Number){
-
-    this.codeBreakerService.guess(number).subscribe(
-      res => this.data = res
-  );
-  }
+consultar(){
+      this.codeBreakerService.guess(this.guesser)
+}
   
 }
 

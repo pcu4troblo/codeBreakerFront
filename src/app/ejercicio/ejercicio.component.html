@@ -1,12 +1,12 @@
-<input type="text" [value]= 'text']>
-<button (click)='empezar(text.value)'>
+<input type="text" [(ngModel)]="secret">
+<button (click)='empezar()'>
 Empezar
 </button>
-<input type="text" [value]= 'text'>
-<button (click)='empezar(text.value)'>
+<input type="text" [(ngModel)]="guesser">
+<button (click)='consultar()'>
 Consultar
 </button>
 
-{{data}}
+
 
 <router-outlet></router-outlet>
