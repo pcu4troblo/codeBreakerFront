@@ -19,11 +19,21 @@ export class EjercicioComponent implements OnInit {
   }
 
   empezar(){
-    this.codeBreakerService.setNumber(this.secret).subscribe();
+    this.codeBreakerService.setNumber(this.secret).subscribe(
+      res => {
+        this.res = res;
+        console.log(this.res.message);
+        
+      }
+    );
   }
 
 consultar(){
-      this.codeBreakerService.guess(this.guesser)
+      this.codeBreakerService.guess(this.guesser).subscribe( res => {
+        this.res = res;
+        console.log(this.res);
+        
+      });
 }
   
 }
