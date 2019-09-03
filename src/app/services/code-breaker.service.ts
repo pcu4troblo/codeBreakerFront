@@ -7,7 +7,7 @@ import { HttpClient } from "@angular/common/http";
 })
 export class CodeBreakerService {
   //https://code-breaker-udea-pcu4troblo.herokuapp.com
-  URI_API = 'http://localhost:3000'
+  URI_API = 'https://code-breaker-udea-pcu4troblo.herokuapp.com'
   constructor(private http: HttpClient) { }
 
   public setNumber(number: Number){

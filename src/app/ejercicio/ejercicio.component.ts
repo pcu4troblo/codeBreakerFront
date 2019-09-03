@@ -8,7 +8,7 @@ import { CodeBreakerService } from './../services/code-breaker.service';
 })
 export class EjercicioComponent implements OnInit {
   
-  res: any;
+  res: any = {};
   secret : number;
   guesser : number;
 
@@ -18,22 +18,18 @@ export class EjercicioComponent implements OnInit {
     
   }
 
-  empezar(){
+  iniciar(){
     this.codeBreakerService.setNumber(this.secret).subscribe(
-      res => {
-        this.res = res;
-        console.log(this.res.message);
-        
-      }
+      res => this.res = res
     );
+    console.log(this.res.message);
   }
 
-consultar(){
+intentar(){
       this.codeBreakerService.guess(this.guesser).subscribe( res => {
         this.res = res;
-        console.log(this.res);
-        
       });
+      console.log(this.res.result);
 }
   
 }
